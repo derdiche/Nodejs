@@ -1,0 +1,22 @@
+{
+  "name": "node-pokemon-api",
+  "version": "1.0.0",
+  "description": "une API Rest pour gérer des Pokemon",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/derdiche/Nodejs.git"
+  },
+  "author": "Fossyl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/derdiche/Nodejs/issues"
+  },
+  "homepage": "https://github.com/derdiche/Nodejs#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
