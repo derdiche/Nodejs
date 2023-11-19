@@ -4,7 +4,7 @@
   "description": "une API Rest pour gérer des Pokemon",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
