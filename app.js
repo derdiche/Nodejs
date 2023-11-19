@@ -1,6 +1,8 @@
 // console.log("salut tout le monde");
 const express = require("express"); //recuperation du paquet express
-let pokemons = require("./mock-pokemon");
+let pokemons = require("./mock-pokemon"); // recuperation des données
+const { succes } = require("./helper.js"); // recuperation des messages
+/*                      IMPORT                      */
 const app = express(); //instace de express (serveur web ou va fonction notre API REST
 const port = 3000;
 //HOME PAGE
@@ -10,7 +12,12 @@ app.get("/", (req, res) => res.send("salut, express!"));
 app.get("/api/pokemons/:id", (req, res) => {
   const id = parseInt(req.params.id);
   const pokemon = pokemons.find((pokemon) => pokemon.id === id);
-  res.send(`vous avez demande le pokemon ${pokemon.name} !`);
+  let message =
+    pokemon === undefined
+      ? `le pokemon n°${id} n'est pas dans notre pokedex`
+      : "succes;";
+  // res.send(`vous avez demande le pokemon ${pokemon.name} !`);//CETTE METHODE NE REVOI PAS JSON FORMAT STANDAR
+  res.json(succes(message, pokemon));
 });
 //EXO:mettre un nouveau point de terminaison qui retournera le nombre total de pokemon present dans notre API RESt
 app.get("/api/pokemons", (req, res) => {
